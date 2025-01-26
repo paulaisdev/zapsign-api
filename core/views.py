@@ -29,6 +29,10 @@ class DocumentViewSet(viewsets.ModelViewSet):
         if not company:
             return self._company_not_found_response(company_name)
 
+        # Garante que o ID da empresa seja tratado como número
+        company_id = int(company.id)
+        logger.debug(f"Company ID (as number): {company_id}")
+
         api_response = self._create_document_in_zapsign(company.api_token, document_name, signers, pdf_path)
         if not api_response:
             return Response({"error": "Failed to create document in ZapSign API."},
