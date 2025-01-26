@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-^d1b%pe10xtrr1vxr+nt#59!m(^(f!ifsawn07t$z8fi6p4*z7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'zapsign-backend-l4jq.onrender.com']
 
 
 # Application definition
