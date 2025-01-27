@@ -92,11 +92,11 @@ WSGI_APPLICATION = "zapsign_backend.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'zasign_ap'),
-        'USER': os.getenv('DB_USER', 'zasign_api_user'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'qnH57u7CccaDZmGqrB1ZxilZzxXJgfA0'),
-        'HOST': os.getenv('DB_HOST', 'dpg-cuasg0q3esus73eolp20-a'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
