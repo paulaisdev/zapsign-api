@@ -31,7 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'zapsign-backend-l4jq.onrender.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -91,7 +90,14 @@ WSGI_APPLICATION = "zapsign_backend.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'zasign_ap'),
+        'USER': os.getenv('DB_USER', 'zasign_api_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'qnH57u7CccaDZmGqrB1ZxilZzxXJgfA0'),
+        'HOST': os.getenv('DB_HOST', 'dpg-cuasg0q3esus73eolp20-a'),
+        'PORT': os.getenv('DB_PORT', '5432'),
+    }
 }
 
 
